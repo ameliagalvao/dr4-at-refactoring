@@ -5,6 +5,9 @@ public class Client {
     private final String email;
 
     public Client(String name, String email) {
+        if (email == null || !email.contains("@")) {
+            throw new IllegalArgumentException("Email inválido.");
+        }
         this.name = name;
         this.email = email;
     }
@@ -15,9 +18,5 @@ public class Client {
 
     public String getEmail() {
         return email;
-    }
-
-    public boolean isEmailValid() {
-        return email != null && email.contains("@");
     }
 }

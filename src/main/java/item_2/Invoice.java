@@ -6,9 +6,6 @@ public class Invoice {
     private final InvoiceType type;
 
     public Invoice(Client client, double amount, InvoiceType type) {
-        if (!client.isEmailValid()) {
-            throw new IllegalArgumentException("Email inválido.");
-        }
         this.client = client;
         this.amount = amount;
         this.type = type;
