@@ -20,10 +20,6 @@ public class Invoice {
                 "---------------------";
     }
 
-    public void printInvoice() {
-        System.out.println(this);
-    }
-
     public void sendByEmail() {
         System.out.println("Enviando email para: " + client.getEmail());
         System.out.println("Conteúdo:\n" + this);
