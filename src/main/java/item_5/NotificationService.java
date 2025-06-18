@@ -1,13 +1,13 @@
 package item_5;
 
 public class NotificationService {
-    public void notifyUser(String channel, String message) {
-        if (channel.equals("EMAIL")) {
-            System.out.println("Sending EMAIL: " + message);
-        } else if (channel.equals("SMS")) {
-            System.out.println("Sending SMS: " + message);
-        } else if (channel.equals("PUSH")) {
-            System.out.println("Sending PUSH: " + message);
-        }
+    private final NotificationStrategy strategy;
+
+    public NotificationService(NotificationStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void notifyUser(String message) {
+        strategy.send(message);
     }
 }
